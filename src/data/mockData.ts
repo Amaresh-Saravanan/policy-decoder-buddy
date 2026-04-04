@@ -1,0 +1,108 @@
+export const mockPolicies = [
+  {
+    id: "1",
+    name: "Health Shield Plus",
+    insurer: "Star Health",
+    policyNumber: "SH-2024-98712",
+    risk: "high" as const,
+    coverage: "₹5,00,000",
+    premium: "₹12,400/yr",
+    expiresAt: "2025-03-15",
+    redFlags: 3,
+    summary: "Comprehensive health plan with notable exclusions for pre-existing conditions and mental health treatment.",
+  },
+  {
+    id: "2",
+    name: "Term Life Protect",
+    insurer: "LIC",
+    policyNumber: "LIC-TL-445566",
+    risk: "low" as const,
+    coverage: "₹50,00,000",
+    premium: "₹8,200/yr",
+    expiresAt: "2045-06-01",
+    redFlags: 0,
+    summary: "Standard term life policy with straightforward terms and no hidden exclusions.",
+  },
+  {
+    id: "3",
+    name: "Motor Comprehensive",
+    insurer: "HDFC Ergo",
+    policyNumber: "HE-MC-112233",
+    risk: "medium" as const,
+    coverage: "₹8,50,000",
+    premium: "₹6,800/yr",
+    expiresAt: "2025-08-20",
+    redFlags: 1,
+    summary: "Covers own damage and third-party liability. Note the 24-hour claim filing requirement.",
+  },
+];
+
+export const mockRedFlags = [
+  {
+    id: "rf1",
+    policyId: "1",
+    severity: "high" as const,
+    title: "Pre-existing Disease Waiting Period",
+    original: "Any disease or condition that the insured had at the time of inception of the policy shall not be covered for a period of 48 months from the date of commencement.",
+    simplified: "If you had any illness before buying this policy, it won't be covered for 4 years. That's double the industry standard of 2 years.",
+    impact: "You'll pay out-of-pocket for any treatment related to known conditions for 4 full years.",
+    action: "Negotiate this down to 24 months, or compare with Star Health's other plans that offer 24-month waiting.",
+  },
+  {
+    id: "rf2",
+    policyId: "1",
+    severity: "high" as const,
+    title: "Mental Health Exclusion",
+    original: "Expenses incurred for treatment of psychiatric and psychosomatic disorders are not admissible under this policy.",
+    simplified: "This policy completely excludes mental health treatment — therapy, counselling, psychiatric medication, everything.",
+    impact: "You have zero coverage for depression, anxiety, PTSD, or any mental health condition.",
+    action: "This violates IRDAI guidelines post-2022. File a complaint or switch to a policy that covers mental health.",
+  },
+  {
+    id: "rf3",
+    policyId: "1",
+    severity: "medium" as const,
+    title: "Claim Filing Deadline",
+    original: "The insured or the hospital shall intimate the Company within 24 hours of admission in case of emergency hospitalization.",
+    simplified: "You must inform the insurer within 24 hours of any emergency hospital visit, or they can reject your claim.",
+    impact: "If you're in an accident and your family doesn't call the insurer within a day, the entire claim can be denied.",
+    action: "Set up an emergency contact protocol. Save the insurer's claim number in your phone contacts.",
+  },
+];
+
+export const mockSavingsPools = [
+  {
+    id: "sp1",
+    name: "Health Protection",
+    icon: "🏥",
+    dailyAmount: 10,
+    totalSaved: 4200,
+    coverage: 12500,
+    streak: 7,
+    color: "gradient-accent",
+  },
+  {
+    id: "sp2",
+    name: "Accident Cover",
+    icon: "🛡️",
+    dailyAmount: 5,
+    totalSaved: 1500,
+    coverage: 5000,
+    streak: 14,
+    color: "gradient-primary",
+  },
+  {
+    id: "sp3",
+    name: "Crop Insurance",
+    icon: "🌾",
+    dailyAmount: 15,
+    totalSaved: 6300,
+    coverage: 25000,
+    streak: 3,
+    color: "gradient-warning",
+  },
+];
+
+export const mockClaimMessages = [
+  { role: "assistant" as const, content: "Hi! I'm your claim assistant. Tell me what happened, and I'll check if your policy covers it and guide you through filing a claim." },
+];
